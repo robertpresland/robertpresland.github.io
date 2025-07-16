@@ -9,11 +9,11 @@ window.onload = () => {
             // Add a box to the north of the initial GPS position
             const entity = document.createElement("a-entity");
             entity.setAttribute("scale", {
-                x: 1,
-                y: 1,
-                z: 1
+                x: 10,
+                y: 10,
+                z: 10
             });
-            entity.setAttribute('gltf - model', { "./assets/magnemite/Arch-004.glb" });
+            entity.setAttribute('gltf-model', { "assets/magnemite/Arch-004.glb" });
             entity.setAttribute('gps-new-entity-place', {
                 latitude: e.detail.position.latitude + 0.001,
                 longitude: e.detail.position.longitude
