@@ -13,7 +13,7 @@ window.onload = () => {
                 y: 10,
                 z: 10
             });
-            entity.setAttribute('gltf-model', { "assets/magnemite/Arch-004.glb" });
+            entity.setAttribute('gltf-model', { "./assets/magnemite/Arch-004.glb" });
             entity.setAttribute('gps-new-entity-place', {
                 latitude: e.detail.position.latitude + 0.001,
                 longitude: e.detail.position.longitude
