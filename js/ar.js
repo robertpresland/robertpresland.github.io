@@ -5,15 +5,15 @@ window.onload = () => {
 
     el.addEventListener("gps-camera-update-position", e => {
         if (!testEntityAdded) {
-            alert(`Got first GPS position: lon ${e.detail.position.longitude} lat ${e.detail.position.latitude}`);
+            //alert(`Got first GPS position: lon ${e.detail.position.longitude} lat ${e.detail.position.latitude}`);
             // Add a box to the north of the initial GPS position
-            const entity = document.createElement("a-box");
+            const entity = document.createElement("a-entity");
             entity.setAttribute("scale", {
-                x: 20,
-                y: 20,
-                z: 20
+                x: 1,
+                y: 1,
+                z: 1
             });
-            entity.setAttribute('material', { color: 'red' });
+            entity.setAttribute('gltf - model', { "./assets/magnemite/Arch-004.glb" });
             entity.setAttribute('gps-new-entity-place', {
                 latitude: e.detail.position.latitude + 0.001,
                 longitude: e.detail.position.longitude
@@ -23,3 +23,4 @@ window.onload = () => {
         testEntityAdded = true;
     });
 };
+=
