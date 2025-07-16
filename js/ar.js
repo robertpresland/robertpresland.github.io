@@ -1,6 +1,6 @@
 window.onload = () => {
     let testEntityAdded = false;
-
+    alert("Let's start here");
     const el = document.querySelector("[gps-new-camera]");
 
     el.addEventListener("gps-camera-update-position", e => {
