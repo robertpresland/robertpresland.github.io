@@ -314,7 +314,8 @@ function DigDeeper(ind){
 				$(":mobile-pagecontainer").pagecontainer("change", "#full", {changeHash: false});
 		break;
 		case "iPast":
-
+			initMatch();
+			$(":mobile-pagecontainer").pagecontainer("change", "#match", {changeHash: false});
 		break;
 		case "iAudio":
 			$(".page_playAudio .titleBar h1").html(json.Menu[currentLocation].Title);
@@ -343,18 +344,19 @@ function checkAudio(){
 }
 
 function initMatch(){
-
+	StartCamera()
+	$(".cameraGuide").animate({opacity: 0.5}, 1000);
 	$(".cameraOld").hide();
+	$(".instructionHolder").show();
 	$(".cameraGuide").click(function () {
 		$(".cameraOld").show();
 		$(".cameraGuide").animate({opacity: 1}, 1000);
 		$(".instructionHolder").hide();
-		$(".cameraGuide").css("background-image", "none");
+		//$(".cameraGuide").css("background-image", "none");
 	});
 }
 
 function StartCamera(){
-	$("body").addClass("black");
 	if(navigator && navigator.mediaDevices){
     	const options = { audio: false, video: { facingMode: "environment", width: 1920, height: 1080  } }
 		navigator.mediaDevices.getUserMedia(options)

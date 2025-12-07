@@ -34,6 +34,14 @@
     background-image: url('../map/map_3.png');
 }
 
+.cameraGuide {
+    background-image: url('../img/guide.jpg');
+}
+
+.cameraOld{
+    background-image: url('../img/old.jpg');
+}
+
 .l0 #p0 {
     top: 1300px;
     left: 1700px;

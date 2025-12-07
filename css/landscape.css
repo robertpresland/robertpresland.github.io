@@ -134,4 +134,9 @@
     .listS {
         margin-left: 24vw;
     }
+
+    .instructionHolder {
+        margin-left: 20vw;
+        margin-right: 20vw;
+    }
 }
