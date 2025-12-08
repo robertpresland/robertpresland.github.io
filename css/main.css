@@ -1,0 +1,622 @@
+@charset "utf-8";
+/* CSS Document */
+
+@font-face {
+    font-family: 'DMSans-Regular';
+    src: url('../font/DMSans-Regular.woff2') format('woff2'), url('../font/DMSans-Regular.ttf') format('truetype');
+    font-weight: 300;
+    font-display: swap;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'DMSans-Black';
+    src: url('../font/DMSans-Black.woff2') format('woff2'), url('../font/DMSans-Black.ttf') format('truetype');
+    font-weight: 500;
+    font-display: swap;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'DMSans-Light';
+    src: url('../font/DMSans-Light.woff2') format('woff2'), url('../font/DMSans-Light.ttf') format('truetype');
+    font-weight: 100;
+    font-display: swap;
+    font-style: normal;
+}
+
+body {
+  
+  margin:0px;
+  padding:0px;
+  text-shadow: none;
+  overflow-x: hidden;
+  overflow-y: hidden;
+}
+
+h1 {
+    padding: 0;
+    margin: 0;
+    font-family: 'DMSans-Light';
+    color:#f3dA97;
+    text-shadow: none;
+    font-size: 1.8em;
+}
+
+h2 {
+    padding: 0;
+    margin: 0;
+    font-family: 'DMSans-Black';
+    color: #f1f1f1;
+    text-shadow: none;
+    font-size: 1.4em;
+}
+
+h3 {
+    padding: 0;
+    margin: 0;
+    font-family: 'DMSans-Regular';
+    color: #f1f1f1;
+    text-shadow: none;
+    font-size: 1.4em;
+}
+
+h4 {
+    padding: 0;
+    margin: 0;
+    font-family: 'DMSans-Regular';
+    color: #f1f1f1;
+    text-shadow: none;
+    font-size: 1.6em;
+    text-align: center;
+    width: 200px;
+    margin-top: -18px;
+}
+
+p {
+    font-family: 'DMSans-Regular';
+    color: #f1f1f1;
+    text-shadow: none;
+    padding-left: 8vw;
+    padding-right: 8vw;
+    padding-top: 2vh;
+    padding-bottom: 2vh;
+    font-size: 1.1em;
+}
+
+.captionP {
+    display: block;
+    max-width: 80vw;
+    position: absolute;
+    right: 0;
+    bottom: 45vh;
+    z-index: 2;
+    margin-bottom: 1px;
+    padding: 5px;
+    font-size: 0.8em;
+    background: rgba(0, 0, 0, 0.6);
+}
+
+.black {
+    background-color: #000000;
+}
+
+.red {
+    background-color: #25000d;
+}
+
+.gold {
+    background-color: #f3dA97;
+}
+
+.grey {
+    background-color: #f1f1f1;
+}
+
+.navy {
+    background-color: #242c39;
+}
+
+.blue {
+    background-color: #173042;
+}
+
+.back {
+    width: 100vw;
+    height: 100vh;
+    
+}
+
+.decor1 {
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: 30vw;
+    height: 24vh;
+    background-image: url("../img/BG_tr.png");
+    background-size:contain;
+    background-position:top right;
+    background-repeat: no-repeat;
+}
+
+.decor2 {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 20vw;
+    height: 20vh;
+    background-image: url("../img/BG_bl.png");
+    background-size:contain;
+    background-position:bottom left;
+    background-repeat: no-repeat;
+}
+
+.head {
+    width: 100vw;
+    height: 24vh;
+}
+
+.titleBar {
+    width: 84vw;
+    height: 12vh;
+    margin-left: 8vw;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.splashImage {
+    width: 100vw;
+    height: 100vh;
+    padding-top: 5vh;
+    padding-bottom: 5vh;
+    background-image: url("../img/splash.JPG");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.splashHead {
+    text-align: center;
+    margin-left: 8vw;
+    margin-right: 8vw;
+    padding-top: 2vh;
+    padding-left: 1vw;
+    padding-right: 1vw;
+    padding-bottom: 2vh;
+}
+
+.splashHead h1 {
+    margin-bottom: 2vh;
+}
+.splashHead h2 {
+    margin-bottom: 2vh;
+}
+
+.splashFoot {
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 68vw;
+    margin-left: 16vw;
+    margin-right: 16vw;
+    border-radius: 15px 15px 15px 15px;
+    padding: 1px;
+    margin-bottom: 5vh;
+}
+
+.splashIn {
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    padding-top: 2vh;
+    padding-left: 1vw;
+    padding-right: 1vw;
+    padding-bottom: 2vh;
+    border-radius: 15px 15px 15px 15px;
+}
+
+.mapHolder {
+    width: 92vw;
+    height: 62vh;
+    padding-left: 1px;
+    padding-top: 1px;
+    padding-bottom: 1px;
+    margin-left: 8vw;
+    border-radius: 30px 0 0 30px;
+}
+
+.mapContent {
+    border-radius: 30px 0 0 30px;
+    overflow: auto; /* adds scrollbars */
+    flex: 1 1 100%;
+    width: 100%;
+    height: 100%;
+    position: relative;
+}
+
+.mapImage {
+    background-image: url('../map/full_map.png');
+    background-size: cover;
+    width: 2400px;
+    height: 2400px;
+    zoom: 1;
+    touch-action: auto;
+    user-select: auto;
+    cursor: default;
+}
+
+.labelBut {
+    width: 200px;
+    height: 200px;
+    background-image: url("../ui/label_sm.svg");
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center;
+    pointer-events: all;
+    position: absolute;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+
+
+.poi {
+    width: 80px;
+    height: 80px;
+    background-image: url("../ui/POI.svg");
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center;
+    pointer-events: all;
+    position: absolute;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.listHolder {
+    width: 100vw;
+    height: 62vh;
+    padding-top: 1px;
+    padding-bottom: 1px;
+}
+
+.listContent::-webkit-scrollbar {
+  display: none;
+}
+
+.listContent {
+    width: 100%;
+    height: 100%;
+    overflow-y:scroll;
+    -ms-overflow-style: none;  /* IE and Edge */
+    scrollbar-width: none;  /* Firefox */
+}
+
+.imageHolder {
+    width: 92vw;
+    height: 31vh;
+    padding-left: 1px;
+    padding-top: 1px;
+    padding-bottom: 1px;
+    margin-left: 8vw;
+    border-radius: 30px 0 0 30px;
+}
+
+.imageContent {
+    width: 100%;
+    height: 100%;
+    border-radius: 30px 0 0 30px;
+    
+}
+
+img.headerImage {
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    object-fit: cover;
+    border-radius: 30px 0 0 30px;
+}
+
+.textHolder {
+    width: 100vw;
+    height: 31vh;
+    padding: 0;
+    padding-bottom: 1px;
+    
+}
+
+.textContent::-webkit-scrollbar {
+  display: none;
+}
+
+.textContent {
+    width: 100%;
+    height: 100%;
+    overflow-y:scroll;
+    -ms-overflow-style: none;  /* IE and Edge */
+    scrollbar-width: none;  /* Firefox */
+    padding-bottom: 2em;
+}
+
+.textFullHolder {
+    width: 100vw;
+    height: 62vh;
+    padding: 0;
+    padding-bottom: 1px;
+}
+
+.textFullContent::-webkit-scrollbar {
+  display: none;
+}
+
+.textBackground {
+    width: 100%;
+    height: 100%;
+}
+
+.textFullContent {
+    width: 100%;
+    height: 100%;
+    overflow-y:scroll;
+    -ms-overflow-style: none;  /* IE and Edge */
+    scrollbar-width: none;  /* Firefox */
+    padding-bottom: 2em;
+}
+
+.fullHolder {
+    width: 100vw;
+    height: 100vh;
+    padding: 0;
+}
+
+.fullDiv {
+    width: 100vw;
+    height: 100vh;
+    padding: 0;
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center;
+    position: fixed;
+    top: 0;
+    left: 0;
+}
+
+.fullContent {
+    width: 100%;
+    height: 100%;
+    position:relative;
+    overflow:hidden
+}
+
+.fullImage {
+    width: 2048px;
+    height: 2048px;
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center;
+}
+
+.instructionHolder {
+    margin-left: 10vw;
+    margin-right: 10vw;
+}
+
+img.bigImage {
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    object-fit: contain;
+}
+
+.foot {
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100vw;
+    height: 14vh;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.line {
+    width: 100%;
+    height: 1px;
+}
+
+.but {
+    width: 14vw;
+    height: 6vh;
+    background-image: url("../ui/Button BG.svg");
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center;
+    float: left;
+    margin-left: 5vw;
+    
+}
+
+.playButton {
+    width: 25%;
+    height: 25%;
+    background-image: url("../ui/Video_play button.svg");
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 10%;
+    
+}
+
+.playing {
+    background-image: url("../ui/Video_pause button.svg");
+}
+
+.proBar {
+    width: 100%;
+    height: 100%;
+}
+
+.proBarHolder {
+    margin-left: auto;
+    margin-right: auto;
+    padding: 1px;
+    width: 60%;
+    height: 6px;
+    margin-top: 10%;
+}
+
+.butLink {
+    width: 84vw;
+    margin-left: 8vw;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.listM {
+    padding-top: 1em;
+    padding-bottom: 1em;
+}
+
+.listS {
+    padding-top: 0.75em;
+    padding-bottom: 0.75em;
+    margin-left: 16vw;
+}
+
+.listS h3 {
+    font-family: 'DMSans-Light';
+    font-size: 1.2em;
+}
+
+.iconHolder {
+    width: 14vw;
+    height: 6vh;
+    float: left;
+}
+
+.icon {
+    width: 100%;
+    height: 100%;
+    
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center;
+}
+
+.icon#help {
+    background-image: url("../ui/icons/icon-help_white.svg");
+}
+
+.icon#zoomIn {
+    background-image: url("../ui/icons/icon-zoom in_white.svg");
+}
+
+.icon#zoomOut {
+    background-image: url("../ui/icons/icon-zoom out_white.svg");
+}
+
+.icon#list {
+    background-image: url("../ui/icons/icon-list_white.svg");
+}
+
+.icon#back {
+    background-image: url("../ui/icons/icon-back_white.svg");
+}
+
+.icon#full {
+    background-image: url("../ui/icons/icon-fullscreen_white.svg");
+}
+
+.icon#close {
+    background-image: url("../ui/icons/icon-close fullscreen_white.svg");
+}
+
+.icon#prev {
+    background-image: url("../ui/icons/icon-swipe left_white.svg");
+}
+
+.icon#next {
+    background-image: url("../ui/icons/icon-swipe right_white.svg");
+}
+
+.icon#map {
+    background-image: url("../ui/icons/icon-map_white.svg");
+}
+
+.iPast {
+    background-image: url("../ui/icons/icon-map pin_white.svg");
+}
+
+.iAudio {
+    background-image: url("../ui/icons/icon-audio_white.svg");
+}
+
+.iPhoto {
+    background-image: url("../ui/icons/icon-image_white.svg");
+}
+
+.disable {
+    pointer-events: none;
+    opacity: 0.4;
+}
+
+.off{
+    display: none;
+    pointer-events: none;
+}
+
+.noclick{
+    pointer-events: none;
+}
+
+.masked-overflow {
+    /* scroll bar width, for use in mask calculations */
+    --scrollbar-width: 8px;
+
+    /* mask fade distance, for use in mask calculations */
+    --mask-height: 2vh;
+
+    /* If content exceeds height of container, overflow! */
+    overflow-y: auto;
+
+    /* Our height limit */
+
+    /* Need to make sure container has bottom space,
+  otherwise content at the bottom is always faded out */
+    padding-bottom: var(--mask-height);
+
+    /* The content mask is a linear gradient from top to bottom */
+    --mask-image-content: linear-gradient(
+        to bottom,
+        transparent,
+        black var(--mask-height),
+        black calc(100% - var(--mask-height)),
+        transparent
+    );
+
+    /* Here we scale the content gradient to the width of the container 
+  minus the scrollbar width. The height is the full container height */
+    --mask-size-content: calc(100% - var(--scrollbar-width)) 100%;
+
+    /* The scrollbar mask is a black pixel */
+    --mask-image-scrollbar: linear-gradient(black, black);
+
+    /* The width of our black pixel is the width of the scrollbar.
+  The height is the full container height */
+    --mask-size-scrollbar: var(--scrollbar-width) 100%;
+
+    /* Apply the mask image and mask size variables */
+    mask-image: var(--mask-image-content), var(--mask-image-scrollbar);
+    mask-size: var(--mask-size-content), var(--mask-size-scrollbar);
+
+    /* Position the content gradient in the top left, and the 
+  scroll gradient in the top right */
+    mask-position: 0 0, 100% 0;
+
+    /* We don't repeat our mask images */
+    mask-repeat: no-repeat, no-repeat;
+}

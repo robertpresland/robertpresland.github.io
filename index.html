@@ -1,42 +1,363 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <title>AR.js A-Frame Location-based</title>
-    <script src="https://aframe.io/releases/1.3.0/aframe.min.js"></script>
-    <script type='text/javascript' src='https://raw.githack.com/AR-js-org/AR.js/3.4.5/three.js/build/ar-threex-location-only.js'></script>
-    <script type='text/javascript' src='https://raw.githack.com/AR-js-org/AR.js/3.4.5/aframe/build/aframe-ar.js'></script>
+    <meta charset="UTF-8">
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self' data: gap: https://ssl.gstatic.com 'unsafe-eval'; style-src 'self' 'unsafe-inline'; media-src *; img-src 'self' data: content:;">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="msapplication-tap-highlight" content="no">
+    <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width">
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+    <meta http-equiv="ScreenOrientation" content="autoRotate:disabled">
+
+    <link rel="stylesheet" href="js/jquery/mobile/jquery mobile.css" />
+    <link rel="stylesheet" href="js/jquery/mobile/bootstrap.css">
+
+    <link href="css/pinchzoomer.min.css" rel="stylesheet">
+    <script src="js/jquery-1.11.3.min.js" type="text/javascript"></script>
+    <script src="js/hammer.min.js" type="text/javascript"></script>
+    <script src="js/TweenMax.min.js" type="text/javascript"></script>
+    <script src="js/jquery.pinchzoomer.min.js" type="text/javascript"></script>
+
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/landscape.css">
+    <link rel="stylesheet" href="css/images.css">
+
+    <script type="text/javascript" src="js/jquery/jquery.js"></script>
+    <script type="text/javascript" src="js/jquery/jqueryui.js"></script>
+    <script src="js/jquery/mobile/jquery mobile.js"></script>
+    <script src="js/jquery/mobile/bootstrap.js"></script>
+    <script type="text/javascript" src="js/jquery/touchj.js"></script>
+    <script type="text/javascript" src="content/content.js"></script>
+    <script type="text/javascript" src="js/main.js"></script>
+    <title>St Barts Personal Tour</title>
 </head>
-<body>
-    <a-scene vr-mode-ui='enabled: false' arjs='sourceType: webcam; videoTexture: true; debugUIEnabled: false' renderer='antialias: true; alpha: true'>
-        <a-camera id='camera1' look-controls-enabled='false' arjs-device-orientation-controls='smoothingFactor: 0.1' gps-new-camera='gpsMinDistance: 5'> ></a-camera>
-        <a-entity gltf-model="./assets/magnemite/Arch-004.glb" gps-new-entity-place="latitude: 52.951903; longitude: -1.143857" position="0 -1 0" scale="10 10 10"></a-entity>
-        </a-scene>
-    </body>
-    </html>
+<body class="ui-mobile-viewport ui-overlay-a">
 
-    <!--
+    <audio class="sfx" autoplay>
+        <source src="" type="audio/mpeg">
+    </audio>
 
-    <html>
-    <head>
-        <meta charset='utf-8'>
-        <meta http-equiv='X-UA-Compatible' content='IE=edge'>
-        <title>GeoAR.js demo</title>
-        <script src='https://aframe.io/releases/0.9.2/aframe.min.js'></script>
-        <script src="https://raw.githack.com/jeromeetienne/AR.js/master/aframe/build/aframe-ar.min.js"></script>
-        <script src="https://raw.githack.com/donmccurdy/aframe-extras/master/dist/aframe-extras.loaders.min.js"></script>
-        <script>
-            THREEx.ArToolkitContext.baseURL = 'https://raw.githack.com/jeromeetienne/ar.js/master/three.js/'
-        </script>
-    </head>
+    <div class="back red">
+        <div class="decor1"></div>
+        <div class="decor2"></div>
 
-    <body style='margin: 0; overflow: hidden;'>
-        <a-scene vr-mode-ui="enabled: false"
-                 embedded
-                 arjs='sourceType: webcam; sourceWidth:1280; sourceHeight:960; displayWidth: 1280; displayHeight: 960; debugUIEnabled: false;'>
+        <div data-role="page" id="splash" class="page_splash">       
+            
+                <div class="splashImage ">
+                    <div class="splashHead red">
+                        <h1 class="title">St Bartholomew’s Hospital</h1>
+                        <h2 class="subTitle">Personal Guide</h2>
+                    </div>
+                    <div class="splashFoot gold">
+                        <div class="splashIn navy">
+                            <h3 class="CTA">Start the tour</h3>
+                        </div>
+                    </div>
+                </div>
+                
+        </div>
 
-            <a-camera gps-camera rotation-reader></a-camera>
-            <a-entity gltf-model="./assets/magnemite/Arch-004.glb" rotation="0 180 0" scale="1 1 1" position="5 0 0" gps-entity-place="longitude: -1.143857; latitude: 52.951903;" animation-mixer />
-        </a-scene>
-    </body>
-    </html>
-        -->
+        <div data-role="page" id="landing" class="page_landing">       
+            
+                <div class="head">
+                    <div class="titleBar">
+                        <h1 class="title">St Bartholomew’s Hospital</h1>
+                    </div>
+                    <div class="titleBar">
+                        <h2 class="subTitle">Tour Introduction</h2>
+                    </div>
+                </div> 
+                <div class="textFullHolder gold">
+                    <div class="textBackground red">
+                    <div class="textFullContent red masked-overflow">
+                            <p>Welcome to St Bartholomew’s Hospital, also known as Barts. This tour explores the exterior spaces of the hospital: the Henry VIII Gatehouse; the church of St Bartholomew the Less; The Square; and Barts North Wing.<br><br>Barts has been on this site for more than 900 years. It was originally founded in 1123 by a man called Rahere. Saint Bartholomew appeared to him in a vision when he was ill and asked him to build a hospital and priory in his name.<br><br>The North Wing dates from the 1730s, when the old medieval buildings were swept away and a new design of four detached wings was created. The only buildings that survived the 1730s rebuild were St Bartholomew the Less, the old hospital’s ‘cutting room’, and the Henry VIII Gatehouse.<br><br>Barts has survived through religious and political upheaval, Bubonic Plague, the Great Fire of London, the London Blitz and threats of closure. It remained open throughout to care for the sick for free. It is now a state-of-the-art specialist heart and cancer hospital.</p>
+                            <div class="butLink" id="map">
+                                <div class="iconHolder">
+                                    <div id="map" class="icon"></div>
+                                </div>
+                                <h3>See locations on the map</h3>
+                            </div>
+                    </div>
+                    </div>
+                </div>
+                <div class="foot">
+                    <div class="but" id="help"><div id="help" class="icon"></div></div>
+                    <div class="but" id="map"><div id="map" class="icon"></div></div>
+                </div> 
+        
+        </div>
+
+        <div data-role="page" id="content" class="page_content">       
+        
+            <div class="head">
+                <div class="titleBar">
+                    <h1 class="title">St Bartholomew’s Hospital</h1>
+                </div>
+                <div class="titleBar">
+                    <h2 class="subTitle">The Henry VIII Gatehouse</h2>
+                </div>
+            </div> 
+            <div class="imageHolder gold">
+                <div class="imageContent navy">
+                    <img src="" alt="" class="headerImage">
+                    <p class="captionP">St Bartholomew's Hospital, London: a corner of the Gibbs courtyard with many trees and the fountain in the centre. Etching by Lillian C. Smythe. Source: Wellcome Collection</p>
+                    
+                </div> 
+            </div>
+            <div class="textHolder gold">
+                <div class="textBackground red">
+                    <div class="textContent red masked-overflow">
+                        <p>The Gatehouse you see now is a reconstruction of the original that was built in 1702. It was designed by the architect mason Edward Strong Junior as a grand, formal entrance to St Bartholomew’s Hospital from Smithfield for staff, patients, and visitors.<br><br>The Gatehouse commemorates King Henry VIII (who refounded the hospital in 1546), and it features the only public statue of the king in London. Above the statue are carved figures representing lameness and disease. These are based on similar figures which adorned Bethlem Royal Hospital.<br><br>Between 1833 and 1834 the Gatehouse was carefully rebuilt by Philip Hardwick. Hardwick was the official Surveyor to the hospital, a position also held by both his father and his son.<br><br>The Gatehouse has had various uses since it was built, including a porter’s lodge, offices, and accommodation.<br><br>Before we go onto the hospital site, look at some of the features of the Gatehouse and the curtain wall surrounding it and consider how Barts sits within the fascinating wider history of Smithfield.</p>
+                        <div class="butLink link_1" id="link_1">
+                            <div class="iconHolder">
+                                <div id="icon_1" class="icon"></div>
+                            </div>
+                            <h3>See locations on the map</h3>
+                        </div>
+                        <div class="butLink link_2" id="link_2">
+                            <div class="iconHolder">
+                                <div id="icon_2" class="icon"></div>
+                            </div>
+                            <h3>See locations on the map</h3>
+                        </div>
+                        <div class="butLink link_3" id="link_3">
+                            <div class="iconHolder">
+                                <div id="icon_3" class="icon"></div>
+                            </div>
+                            <h3>See locations on the map</h3>
+                        </div>
+                    </div>
+                </div> 
+            </div>
+            <div class="foot">
+                <div class="but" id="back"><div id="back" class="icon"></div></div>
+                <div class="but" id="prev"><div id="prev" class="icon"></div></div>
+                <div class="but" id="next"><div id="next" class="icon"></div></div>
+                <div class="but" id="full"><div id="full" class="icon"></div></div>
+            </div> 
+       
+        </div>
+
+        <div data-role="page" id="list" class="page_list">       
+        
+                <div class="head">
+                    <div class="titleBar">
+                        <h1 class="title">St Bartholomew’s Hospital</h1>
+                    </div>
+                    <div class="titleBar">
+                        <h2 class="subTitle">Select an item from the list</h2>
+                    </div>
+                </div> 
+                <div class="listHolder gold">
+                    <div class="listContent red">
+                        <div class="butLink listM" id="list_0_0"><h3>The Henry VIII Gatehouse</h3></div>
+                        <div class="butLink listS lock0" id="list_0_1"><h3>1. Curtain wall</h3></div>
+                        <div class="butLink listS lock0" id="list_0_2"><h3>2. Bomb damage</h3></div>
+                        <div class="butLink listS lock0" id="list_0_3"><h3>3. Curtain wall memorials</h3></div>
+                        <div class="butLink listS lock0" id="list_0_4"><h3>4. Around Smithfield</h3></div>
+                        <div class="butLink listS lock0" id="list_0_5"><h3>5. Gatehouse</h3></div>
+                        <div class="butLink listM" id="list_1_0"><h3>St Bartholomew the Less</h3></div>
+                        <div class="butLink listS lock1" id="list_1_1"><h3>1. Brickwork</h3></div>
+                        <div class="butLink listS lock1" id="list_1_2"><h3>2. Princess Alice Garden</h3></div>
+                        <div class="butLink listS lock1" id="list_1_3"><h3>3. Garden memorials</h3></div>
+                        <div class="butLink listS lock1" id="list_1_4"><h3>4. Inside the Church</h3></div>
+                        <div class="butLink listS lock1" id="list_1_5"><h3>5. Memorials</h3></div>
+                        <div class="butLink listS lock1" id="list_1_6"><h3>6. Stained glass windows</h3></div>
+                        <div class="butLink listM" id="list_2_0"><h3>The Square</h3></div>
+                        <div class="butLink listS lock2" id="list_2_1"><h3>1. The Fountain</h3></div>
+                        <div class="butLink listS lock2" id="list_2_2"><h3>2. Value of the space</h3></div>
+                        <div class="butLink listM" id="list_3_0"><h3>The North Wing</h3></div>
+                        <div class="butLink listS lock3" id="list_3_1"><h3>1. Barts Heritage</h3></div>
+                        <div class="butLink listS lock3" id="list_3_2"><h3>2. Gibbs build</h3></div>
+                        <div class="butLink listS lock3" id="list_3_3"><h3>3. George V building</h3></div>
+                    </div> 
+                </div>
+                <div class="foot">
+                    <div class="but" id="back"><div id="back" class="icon"></div></div>
+                    <div class="but" id="map"><div id="map" class="icon"></div></div>
+                </div> 
+        
+        </div>
+
+        <div data-role="page" id="map" class="page_map">       
+            
+                <div class="head">
+                    <div class="titleBar">
+                        <h1 class="title">St Bartholomew’s Hospital</h1>
+                    </div>
+                    <div class="titleBar">
+                        <h2 class="subTitle">Select a location</h2>
+                    </div>
+                </div> 
+                <div class="mapHolder gold">
+                    <div class="mapContent blue">
+                        <div class="mapImage" id="pz1" data-elem="pinchzoomer" data-options="adjustHolderSize:false; scaleMode:none; maxZoom:1.5; minZoom:0.25; dragStep:20; initZoom:0.5; appendControlHolder:false; appendControls:false;">
+                            <div class="labelBut" id="l0"><h4>The Henry VIII Gatehouse</h4></div>
+                            <div class="labelBut" id="l1"><h4>St Bartholomew the Less</h4></div>
+                            <div class="labelBut" id="l2"><h4>The Square</h4></div>
+                            <div class="labelBut" id="l3"><h4>The North Wing</h4></div>
+                            <div class="mapIcon starthere" id="map_0_b"></div>
+                        </div>    
+                    </div> 
+                </div>
+                <div class="foot">
+                    <div class="but" id="back"><div id="back" class="icon"></div></div>
+                    <div class="but" id="zoomIn"><div id="zoomIn" class="icon"></div></div>
+                    <div class="but" id="zoomOut"><div id="zoomOut" class="icon"></div></div>
+                    <div class="but" id="list"><div id="list" class="icon"></div></div>
+                </div> 
+        
+        </div>
+
+        <div data-role="page" id="mapDetail" class="page_mapDetail">       
+            
+                <div class="head">
+                    <div class="titleBar">
+                        <h1 class="title">St Bartholomew’s Hospital</h1>
+                    </div>
+                    <div class="titleBar">
+                        <h2 class="subTitle">Select a point of interest</h2>
+                    </div>
+                </div> 
+                <div class="mapHolder gold">
+                    <div class="mapContent blue">
+                       <div class="mapImage mapZoom" id="pz2" data-elem="pinchzoomer" data-options="adjustHolderSize:false; scaleMode:none; maxZoom:1.5; minZoom:0.25; dragStep:20; initZoom:0.5; appendControlHolder:false; appendControls:false;">
+                            <div class="pois l0 off">
+                                <div class="labelBut" id="p0"><h4>Introduction</h4></div>
+                                <div class="poi lock0" id="p1"><h4>1</h4></div>
+                                <div class="poi lock0" id="p2"><h4>2</h4></div>
+                                <div class="poi lock0" id="p3"><h4>3</h4></div>
+                                <div class="poi lock0" id="p4"><h4>4</h4></div>
+                                <div class="poi lock0" id="p5"><h4>5</h4></div>
+                            </div>
+                            <div class="pois l1 off">
+                                <div class="labelBut" id="p0"><h4>Introduction</h4></div>
+                                <div class="poi lock1" id="p1"><h4>1</h4></div>
+                                <div class="poi lock1" id="p2"><h4>2</h4></div>
+                                <div class="poi lock1" id="p3"><h4>3</h4></div>
+                                <div class="poi lock1" id="p4"><h4>4</h4></div>
+                                <div class="poi lock1" id="p5"><h4>5</h4></div>
+                                <div class="poi lock1" id="p6"><h4>6</h4></div>
+                            </div>
+                            <div class="pois l2 off">
+                                <div class="labelBut" id="p0"><h4>Introduction</h4></div>
+                                <div class="poi lock2" id="p1"><h4>1</h4></div>
+                                <div class="poi lock2" id="p2"><h4>2</h4></div>
+                            </div>
+                            <div class="pois l3 off">
+                                <div class="labelBut" id="p0"><h4>Introduction</h4></div>
+                                <div class="poi lock3" id="p1"><h4>1</h4></div>
+                                <div class="poi lock3" id="p2"><h4>2</h4></div>
+                                <div class="poi lock3" id="p3"><h4>3</h4></div>
+                            </div>
+                        </div>
+                          
+                    </div> 
+                </div>
+                <div class="foot">
+                    <div class="but" id="back"><div id="back" class="icon"></div></div>
+                    <div class="but" id="zoomIn"><div id="zoomIn" class="icon"></div></div>
+                    <div class="but" id="zoomOut"><div id="zoomOut" class="icon"></div></div>
+                    <div class="but" id="list"><div id="list" class="icon"></div></div>
+                </div> 
+        
+        </div>
+
+        <div data-role="page" id="match" class="page_match">       
+            
+                <div class="fullHolder black">
+                   <div class="camera fullDiv" id="camera"></div>
+                        <div class="cameraOld fullDiv"></div>
+                        <div class="cameraGuide fullDiv">
+                            <div class="instructionHolder red">
+                                <p>Line up your camera with the guide image and touch the screen to see into the past.</p>
+                            </div>
+                        </div>
+                   
+                </div>
+                <div class="foot">
+                    <div class="but" id="back"><div id="back" class="icon"></div></div>
+                </div> 
+        
+        </div>
+
+        <div data-role="page" id="full" class="page_full">       
+            
+                <div class="fullHolder red">
+                    <div class="fullContent navy">
+                        <div class="fullImage" id="pz3" data-elem="pinchzoomer" data-options="adjustHolderSize:false; scaleMode:none; maxZoom:3; minZoom:0.5; dragStep:20; initZoom:0.5; appendControlHolder:false; appendControls:false;">
+                            
+                        </div>
+                    </div> 
+                </div>
+                <div class="foot">
+                    <div class="but" id="back"><div id="close" class="icon"></div></div>
+                </div> 
+        
+        </div>
+
+        <div data-role="page" id="playAudio" class="page_playAudio">       
+        
+            <div class="head">
+                <div class="titleBar">
+                    <h1 class="title">St Bartholomew’s Hospital</h1>
+                </div>
+                <div class="titleBar">
+                    <h2 class="subTitle">Sub Title</h2>
+                </div>
+            </div> 
+            <div class="textHolder gold">
+                <div class="textContent red">
+                    <div class="playButton"></div>
+                    <div class="proBarHolder gold">
+                        <div class="proBar navy"></div>
+                    </div>
+                </div> 
+            </div>
+            <div class="textHolder gold">
+                <div class="textBackground red">
+                    <div class="textContent red masked-overflow">
+                        <p>Use the 3D map to explore St Bartholomew’s Hospital.<br><br>Touch the labels to learn about the locations and unlock points of interest.<br><br>Touch the numbers to reveal the points of interest. Access a variety of imagery, audio, augmented reality, and written information about the points of interest. Symbols identify the content available.</p>
+                    </div>
+                </div> 
+            </div>
+            <div class="foot">
+                <div class="but" id="back"><div id="back" class="icon"></div></div>
+            </div> 
+       
+        </div>
+
+        <div data-role="page" id="help" class="page_help">       
+        
+            <div class="head">
+                <div class="titleBar">
+                    <h1 class="title">St Bartholomew’s Hospital</h1>
+                </div>
+                <div class="titleBar">
+                    <h2 class="subTitle">Find out how to use your guide</h2>
+                </div>
+            </div> 
+            <div class="imageHolder gold">
+                <div class="imageContent navy">
+                    <img src="img/barts_crest.jpg" alt="Barts' crest" class="headerImage">
+                </div> 
+            </div>
+            <div class="textHolder gold">
+                <div class="textBackground red">
+                    <div class="textContent red masked-overflow">
+                        <p>Use the 3D map to explore St Bartholomew’s Hospital.<br><br>Touch the labels to learn about the locations and unlock points of interest.<br><br>Touch the numbers to reveal the points of interest. Access a variety of imagery, audio, augmented reality, and written information about the points of interest. Symbols identify the content available.</p>
+                    </div>
+                </div> 
+            </div>
+            <div class="foot">
+                <div class="but" id="back"><div id="back" class="icon"></div></div>
+            </div> 
+       
+        </div>
+
+    </div>
+    
+    
+</body>
+</html>

@@ -1,0 +1,143 @@
+.labelBut#l0 {
+    top: 1350px;
+    left: 1700px;
+}
+
+.labelBut#l1 {
+    top: 1300px;
+    left: 1450px;
+}
+
+.labelBut#l2 {
+    top: 950px;
+    left: 1200px;
+}
+
+.labelBut#l3 {
+    top: 1050px;
+    left: 1400px;
+}
+
+.mapImage.mapl0 {
+    background-image: url('../map/map_0.png');
+}
+
+.mapImage.mapl1 {
+    background-image: url('../map/map_1.png');
+}
+
+.mapImage.mapl2 {
+    background-image: url('../map/map_2.png');
+}
+
+.mapImage.mapl3 {
+    background-image: url('../map/map_3.png');
+}
+
+.cameraGuide {
+    background-image: url('../img/guide.jpg');
+}
+
+.cameraOld{
+    background-image: url('../img/old.jpg');
+}
+
+.l0 #p0 {
+    top: 1300px;
+    left: 1700px;
+}
+
+.l0 #p1 {
+   top: 1530px;
+    left: 1700px;
+}
+
+.l0 #p2 {
+    top: 1600px;
+    left: 1570px;
+}
+
+.l0 #p3 {
+   top: 1670px;
+    left: 1460px;
+}
+
+.l0 #p4 {
+    top: 1700px;
+    left: 1700px;
+}
+
+.l0 #p5 {
+    top: 1450px;
+    left: 1800px;
+}
+
+.l1 #p0 {
+   top: 1200px;
+    left: 1500px;
+}
+
+.l1 #p1 {
+    top: 1350px;
+    left: 1660px;
+}
+
+.l1 #p2 {
+   top: 1550px;
+    left: 1600px;
+}
+
+.l1 #p3 {
+    top: 1500px;
+    left: 1400px;
+}
+
+.l1 #p4 {
+    top: 1450px;
+    left: 1520px;
+}
+
+.l1 #p5 {
+    top: 1410px;
+    left: 1600px;
+}
+
+.l1 #p6 {
+    top: 1400px;
+    left: 1420px;
+}
+
+.l2 #p0 {
+    top: 950px;
+    left: 1200px;
+}
+
+.l2 #p1 {
+    top: 1120px;
+    left: 1160px;
+}
+
+.l2 #p2 {
+    top: 1030px;
+    left: 1030px;
+}
+
+.l3 #p0 {
+    top: 1100px;
+    left: 1400px;
+}
+
+.l3 #p1 {
+    top: 1220px;
+    left: 1300px;
+}
+
+.l3 #p2 {
+    top: 900px;
+    left: 1400px;
+}
+
+.l3 #p3 {
+    top: 900px;
+    left: 900px;
+}
