@@ -13,6 +13,8 @@ var pz;
 var pz2;
 var pz3;
 
+var video;
+
 $(document).ready(function () {
 
 	init();
@@ -21,7 +23,7 @@ $(document).ready(function () {
 
 function init() {
 	console.log("init ready! " + window.innerWidth + " , " + window.innerHeight);
-
+	var video = document.getElementById('camera');
 	$(".lock0, .lock1, .lock2, .lock3").addClass("disable");
 	
 	$(":mobile-pagecontainer").on("pagecontainerchange", function (event, ui) {
@@ -352,6 +354,7 @@ function initMatch(){
 		$(".cameraOld").show();
 		$(".cameraGuide").animate({opacity: 0}, 1000);
 		$(".instructionHolder").hide();
+		video.srcObject = null;
 		//$(".cameraGuide").css("background-image", "none");
 	});
 }
@@ -363,7 +366,7 @@ function StartCamera(){
     	const options = { audio: false, video: { facingMode: "environment", width: 1920, height: 1080  } }
 		navigator.mediaDevices.getUserMedia(options)
 		.then(function(stream) {
-			var video = document.getElementById('camera');
+			
 			video.srcObject = stream;
 			video.onloadedmetadata = function(e) {
 			video.play();
@@ -374,6 +377,7 @@ function StartCamera(){
 		});
 	}else{
 		console.log("camera API is not supported by your browser");
+		
 	}
 }
 
