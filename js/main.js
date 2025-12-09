@@ -344,20 +344,22 @@ function checkAudio(){
 }
 
 function initMatch(){
-	StartCamera()
+	StartCamera();
 	$(".cameraGuide").animate({opacity: 0.5}, 1000);
 	$(".cameraOld").hide();
 	$(".instructionHolder").show();
 	$(".cameraGuide").click(function () {
 		$(".cameraOld").show();
-		$(".cameraGuide").animate({opacity: 1}, 1000);
+		$(".cameraGuide").animate({opacity: 0}, 1000);
 		$(".instructionHolder").hide();
 		//$(".cameraGuide").css("background-image", "none");
 	});
 }
 
 function StartCamera(){
+	console.log("START CAMERA");
 	if(navigator && navigator.mediaDevices){
+		console.log("camera supported");
     	const options = { audio: false, video: { facingMode: "environment", width: 1920, height: 1080  } }
 		navigator.mediaDevices.getUserMedia(options)
 		.then(function(stream) {
@@ -371,7 +373,7 @@ function StartCamera(){
 			//Handle error here
 		});
 	}else{
-		console.log("camera API is not supported by your browser")
+		console.log("camera API is not supported by your browser");
 	}
 }
 
